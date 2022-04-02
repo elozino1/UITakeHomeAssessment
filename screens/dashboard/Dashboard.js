@@ -5,7 +5,11 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { stringConstants } from '../../utils/constants'
 import styles from './DashboardStyles'
 
-const Dashboard = () => {
+const Dashboard = ({navigation}) => {
+
+    const navigateToBills = () => {
+        navigation.navigate('Bill Payments')
+    }
     
     return (
         <SafeAreaView style={styles.grandContainer}>
@@ -14,7 +18,7 @@ const Dashboard = () => {
             <View style={styles.headerContainer}>
                 <View style={styles.greetingContainer}>
                     <Text>{stringConstants.GREETING_TEXT}</Text>
-                    <Text>{stringConstants.CUSTOMER_NAME}</Text>
+                    <Text onPress={navigateToBills}>{stringConstants.CUSTOMER_NAME}</Text>
                 </View>
                 <View style={styles.balanceContainer}>
                     <View style={styles.customerBalance}>

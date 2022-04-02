@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import { SearchBar } from 'react-native-elements';
 
 import styles from './BillPaymentStyles'
@@ -39,100 +39,102 @@ const BillPayment = () => {
                 />
             </View>
 
-            {/* airtime providers */}
-            <View style={styles.serviceProviderContainer}>
-                <Text>{stringConstants.AIRTIME_TEXT}</Text>
-                <View style={styles.serviceProviders}>
-                    <View style={styles.provider}>
-                        <MTN />
-                        <Text>{stringConstants.MTN_TEXT}</Text>
-                    </View>
-                    <View style={styles.provider}>
-                        <Airtel />
-                        <Text>{stringConstants.AIRTEL_TEXT}</Text>
-                    </View>
-                    <View style={styles.provider}>
-                        <NineMobile />
-                        <Text>{stringConstants.NINE_MOBILE_TEXT}</Text>
-                    </View>
-                    <View style={styles.provider}>
-                        <Glo />
-                        <Text>{stringConstants.GLO_TEXT}</Text>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                {/* airtime providers */}
+                <View style={styles.serviceProviderContainer}>
+                    <Text>{stringConstants.AIRTIME_TEXT}</Text>
+                    <View style={styles.serviceProviders}>
+                        <View style={styles.provider}>
+                            <MTN />
+                            <Text style={styles.providerName}>{stringConstants.MTN_TEXT}</Text>
+                        </View>
+                        <View style={styles.provider}>
+                            <Airtel />
+                            <Text style={styles.providerName}>{stringConstants.AIRTEL_TEXT}</Text>
+                        </View>
+                        <View style={styles.provider}>
+                            <NineMobile />
+                            <Text style={styles.providerName}>{stringConstants.NINE_MOBILE_TEXT}</Text>
+                        </View>
+                        <View style={styles.provider}>
+                            <Glo />
+                            <Text style={styles.providerName}>{stringConstants.GLO_TEXT}</Text>
+                        </View>
                     </View>
                 </View>
-            </View>
 
-            {/* electricity providers */}
-            <View style={styles.serviceProviderContainer}>
-                <Text>{stringConstants.ELECTRICITY_TEXT}</Text>
-                <View style={styles.serviceProviders}>
-                    <View style={styles.provider}>
-                        <Ikedc />
-                        <Text>{stringConstants.IKEDC_TEXT}</Text>
+                {/* electricity providers */}
+                <View style={styles.serviceProviderContainer}>
+                    <Text>{stringConstants.ELECTRICITY_TEXT}</Text>
+                    <View style={styles.serviceProviders}>
+                        <View style={styles.provider}>
+                            <Ikedc />
+                            <Text style={styles.providerName}>{stringConstants.IKEDC_TEXT}</Text>
+                        </View>
+                        <View style={styles.provider}>
+                            <Ekedc />
+                            <Text style={styles.providerName}>{stringConstants.EKEDC_TEXT}</Text>
+                        </View>
+                        <View style={styles.provider}>
+                            <Aedc />
+                            <Text style={styles.providerName}>{stringConstants.AEDC_TEXT}</Text>
+                        </View>
+                        <View style={styles.provider}>
+                            <Aedc />
+                            <Text style={styles.providerName}>{stringConstants.AEDC_TEXT}</Text>
+                        </View>
                     </View>
-                    <View style={styles.provider}>
-                        <Ekedc />
-                        <Text>{stringConstants.EKEDC_TEXT}</Text>
-                    </View>
-                    <View style={styles.provider}>
-                        <Aedc />
-                        <Text>{stringConstants.AEDC_TEXT}</Text>
-                    </View>
-                    <View style={styles.provider}>
-                        <Aedc />
-                        <Text>{stringConstants.AEDC_TEXT}</Text>
-                    </View>
+                    <Text style={styles.viewAllText}>{stringConstants.VIEW_ALL}</Text>
                 </View>
-                <Text style={styles.viewAllText}>{stringConstants.VIEW_ALL}</Text>
-            </View>
 
-            {/* Cable TV service providers */}
-            <View style={styles.serviceProviderContainer}>
-                <Text>{stringConstants.ELECTRICITY_TEXT}</Text>
-                <View style={styles.serviceProviders}>
-                    <View style={styles.provider}>
-                        <DSTV />
-                        <Text>{stringConstants.DSTV_TEXT}</Text>
+                {/* Cable TV service providers */}
+                <View style={styles.serviceProviderContainer}>
+                    <Text>{stringConstants.ELECTRICITY_TEXT}</Text>
+                    <View style={styles.serviceProviders}>
+                        <View style={styles.provider}>
+                            <DSTV />
+                            <Text style={styles.providerName}>{stringConstants.DSTV_TEXT}</Text>
+                        </View>
+                        <View style={styles.provider}>
+                            <GOTV />
+                            <Text style={styles.providerName}>{stringConstants.DSTV_TEXT}</Text>
+                        </View>
+                        <View style={styles.provider}>
+                            <DSTV />
+                            <Text style={styles.providerName}>{stringConstants.DSTV_TEXT}</Text>
+                        </View>
+                        <View style={styles.provider}>
+                            <DSTV />
+                            <Text style={styles.providerName}>{stringConstants.DSTV_TEXT}</Text>
+                        </View>
                     </View>
-                    <View style={styles.provider}>
-                        <GOTV />
-                        <Text>{stringConstants.DSTV_TEXT}</Text>
-                    </View>
-                    <View style={styles.provider}>
-                        <DSTV />
-                        <Text>{stringConstants.DSTV_TEXT}</Text>
-                    </View>
-                    <View style={styles.provider}>
-                        <DSTV />
-                        <Text>{stringConstants.DSTV_TEXT}</Text>
-                    </View>
+                    <Text style={styles.viewAllText}>{stringConstants.VIEW_ALL}</Text>
                 </View>
-                <Text style={styles.viewAllText}>{stringConstants.VIEW_ALL}</Text>
-            </View>
 
-            {/* Internet service providers */}
-            <View style={styles.serviceProviderContainer}>
-                <Text>{stringConstants.ELECTRICITY_TEXT}</Text>
-                <View style={styles.serviceProviders}>
-                    <View style={styles.provider}>
-                        <Smile />
-                        <Text>{stringConstants.SMILE_TEXT}</Text>
+                {/* Internet service providers */}
+                <View style={styles.serviceProviderContainer}>
+                    <Text>{stringConstants.ELECTRICITY_TEXT}</Text>
+                    <View style={styles.serviceProviders}>
+                        <View style={styles.provider}>
+                            <Smile />
+                            <Text style={styles.providerName}>{stringConstants.SMILE_TEXT}</Text>
+                        </View>
+                        <View style={styles.provider}>
+                            <Spectranet />
+                            <Text style={styles.providerName}>{stringConstants.SPECTRANET_TEXT}</Text>
+                        </View>
+                        <View style={styles.provider}>
+                            <Spectranet />
+                            <Text style={styles.providerName}>{stringConstants.SPECTRANET_TEXT}</Text>
+                        </View>
+                        <View style={styles.provider}>
+                            <Spectranet />
+                            <Text style={styles.providerName}>{stringConstants.SPECTRANET_TEXT}</Text>
+                        </View>
                     </View>
-                    <View style={styles.provider}>
-                        <Spectranet />
-                        <Text>{stringConstants.SPECTRANET_TEXT}</Text>
-                    </View>
-                    <View style={styles.provider}>
-                        <Spectranet />
-                        <Text>{stringConstants.SPECTRANET_TEXT}</Text>
-                    </View>
-                    <View style={styles.provider}>
-                        <Spectranet />
-                        <Text>{stringConstants.SPECTRANET_TEXT}</Text>
-                    </View>
+                    <Text style={styles.viewAllText}>{stringConstants.VIEW_ALL}</Text>
                 </View>
-                <Text style={styles.viewAllText}>{stringConstants.VIEW_ALL}</Text>
-            </View>
+            </ScrollView>
         </SafeAreaView>
     )
 }

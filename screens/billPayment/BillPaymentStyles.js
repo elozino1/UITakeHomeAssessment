@@ -12,6 +12,7 @@ export default StyleSheet.create({
         backgroundColor: colors.WHITE, 
         borderBottomWidth: 0, 
         borderTopWidth: 0,
+        paddingBottom: 20,
     },
     searchBarInputContainerStyle: {
         backgroundColor: colors.GREY,
@@ -28,7 +29,11 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
     },
     provider: {
-        alignItems: 'center',
+        justifyContent: 'flex-end',
+        marginTop: 10,
+    },
+    providerName: {
+        textAlign: 'center',
         marginTop: 10,
     },
     viewAllText: {
