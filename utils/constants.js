@@ -23,8 +23,11 @@ export const stringConstants = {
     EKEDC_TEXT: 'EKEDC',
     AEDC_TEXT: 'Abuja',
     VIEW_ALL: 'view all',
+    TVBILLS_TEXT: 'TV Bills',
     DSTV_TEXT: 'DSTV',
     INTERNET_SERVICES_TEXT: 'Internet Services',
     SMILE_TEXT: 'Smile',
     SPECTRANET_TEXT: 'Spectranet',
+    INPUT_PIN_PROMPT_TEXT: `Enter your transaction PIN to
+complete this payment`,
 }

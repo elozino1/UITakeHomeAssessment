@@ -89,7 +89,7 @@ const BillPayment = () => {
 
                 {/* Cable TV service providers */}
                 <View style={styles.serviceProviderContainer}>
-                    <Text>{stringConstants.ELECTRICITY_TEXT}</Text>
+                    <Text>{stringConstants.TVBILLS_TEXT}</Text>
                     <View style={styles.serviceProviders}>
                         <View style={styles.provider}>
                             <DSTV />
@@ -113,7 +113,7 @@ const BillPayment = () => {
 
                 {/* Internet service providers */}
                 <View style={styles.serviceProviderContainer}>
-                    <Text>{stringConstants.ELECTRICITY_TEXT}</Text>
+                    <Text>{stringConstants.INTERNET_SERVICES_TEXT}</Text>
                     <View style={styles.serviceProviders}>
                         <View style={styles.provider}>
                             <Smile />
