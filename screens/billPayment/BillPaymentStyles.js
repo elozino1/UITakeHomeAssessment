@@ -7,16 +7,20 @@ export default StyleSheet.create({
         backgroundColor: colors.BACKGROUND_COLOR,
     },
     searchBarContainer: {
+
     },
     searchBarContainerStyle: {
         backgroundColor: colors.WHITE, 
         borderBottomWidth: 0, 
         borderTopWidth: 0,
+        paddingHorizontal: 20,
         paddingBottom: 20,
     },
     searchBarInputContainerStyle: {
+        paddingLeft: 10,
         backgroundColor: colors.GREY,
         borderRadius: 10,
+        borderBottomWidth: 0,
     },
     serviceProviderContainer: {
         backgroundColor: colors.WHITE,

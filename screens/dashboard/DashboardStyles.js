@@ -11,10 +11,15 @@ export default StyleSheet.create({
     headerContainer: {
         backgroundColor: colors.LIGHT_GREEN,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        paddingHorizontal: 20,
+        paddingVertical: 15,
     },
     greetingContainer: {
 
+    },
+    greetingMargin: {
+        marginTop: 10,
     },
     balanceContainer: {
         flexDirection: 'column'
@@ -29,6 +34,7 @@ export default StyleSheet.create({
     allFeaturesContainer: {
         backgroundColor: colors.LIGHT_GREEN,
         paddingBottom: 35,
+        paddingHorizontal: 20,
     },
     featureContainer: {
         width: 80,
@@ -36,6 +42,7 @@ export default StyleSheet.create({
         borderRadius: 40,
         backgroundColor: colors.FEATURE_CONTAINER,
         justifyContent: 'center',
+        marginBottom: 5,
     },
     singleFeatureContainer: {
         width: 80,
@@ -44,10 +51,15 @@ export default StyleSheet.create({
         backgroundColor: colors.FEATURE_CONTAINER,
         justifyContent: 'center',
         alignSelf: 'center',
+        marginBottom: 5,
+    },
+    featureAndText: {
+        alignItems: 'center',
     },
     horizontalFeatureContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        marginTop: -20,
     },
     featureImage: {
         alignSelf: 'center',
@@ -55,10 +67,15 @@ export default StyleSheet.create({
     accountNumberInfo: {
         flexDirection: 'row',
         borderRadius: 30,
+        width: '70%',
         backgroundColor: colors.FEATURE_CONTAINER,
         paddingHorizontal: 10,
-        paddingVertical: 3,
+        paddingVertical: 10,
+        marginTop: 15,
         fontSize: 14,
+        alignSelf: 'center',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
     },
 
     // recent transactions
@@ -71,12 +88,13 @@ export default StyleSheet.create({
         backgroundColor: colors.WHITE, 
         borderBottomWidth: 0, 
         borderTopWidth: 0,
-        paddingBottom: 20,
         paddingHorizontal: 0,
     },
     searchBarInputContainerStyle: {
         backgroundColor: colors.GREY,
+        paddingLeft: 10,
         borderRadius: 10,
+        borderBottomWidth: 0,
     },
     recentTransaction: {
         paddingHorizontal: 20,
@@ -107,11 +125,12 @@ export default StyleSheet.create({
         paddingHorizontal: 20
     },
     serviceProvidersContainer: {
+        marginTop: 30,
     },
     serviceProviders: {
         marginRight: 20
     },
     profileInfo: {
-        alignContent: 'center',
+        
     },
 })

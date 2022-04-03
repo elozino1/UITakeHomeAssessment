@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { View, Text, SafeAreaView, ScrollView } from "react-native";
-import { SearchBar } from 'react-native-elements';
+import { View, Text, SafeAreaView, ScrollView, StatusBar } from "react-native";
+import { Input } from 'react-native-elements';
 
 import styles from './BillPaymentStyles'
 import { stringConstants } from "../../utils/constants";
@@ -15,6 +15,7 @@ import DSTV from '../../assets/images/DStv.svg';
 import GOTV from '../../assets/images/GOtv.svg';
 import Smile from '../../assets/images/smile.svg';
 import Spectranet from '../../assets/images/spectranet.svg';
+import Search from '../../assets/images/searchicon.svg';
 
 
 const BillPayment = () => {
@@ -28,15 +29,23 @@ const BillPayment = () => {
 
     return (
         <SafeAreaView style={styles.grandContainer}>
+            <StatusBar />
             {/* search bar */}
             <View style={styles.searchBarContainer}>
-                <SearchBar
-                    containerStyle={styles.searchBarContainerStyle}
-                    inputContainerStyle={styles.searchBarInputContainerStyle}
-                    placeholder="Search"
-                    onChangeText={updateSearchText}
-                    value={searchText}
-                />
+            <Input
+                containerStyle={styles.searchBarContainerStyle}
+                inputContainerStyle={styles.searchBarInputContainerStyle}
+                placeholder="Search"
+                onChangeText={updateSearchText}
+                value={searchText}
+                leftIcon={
+                    <Search
+                        name='user'
+                        size={24}
+                        color='black'
+                    />
+                    }
+            />
             </View>
 
             <ScrollView showsVerticalScrollIndicator={false}>

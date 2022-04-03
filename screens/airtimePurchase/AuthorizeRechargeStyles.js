@@ -30,7 +30,7 @@ export default StyleSheet.create({
         height: 80,
         width: 80,
         borderRadius: 40,
-        backgroundColor: colors.BACKGROUND_COLOR,
+        backgroundColor: colors.GREY,
         justifyContent: 'center'
     },
     emptyNumberButton: {

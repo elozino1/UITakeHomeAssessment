@@ -6,24 +6,34 @@ import UserSquareSmall from '../assets/images/user-square-small.svg';
 import { colors } from '../utils/constants';
 
 const ProfileInfo = () => (
-    <View style={styles.container}>
-        <SendMoneySmall />
-        <UserSquareSmall />
+    <View style={styles.grandContainer}>
+        <View style={styles.container}>
+            <SendMoneySmall />
+            <UserSquareSmall />
+        </View>
     </View>
 )
 
 const styles = StyleSheet.create({
+    grandContainer: {
+        alignSelf: 'center',
+    },
     container: {
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'space-evenly',
         alignItems: 'center',
+        paddingVertical: 10,
         backgroundColor: colors.WHITE,
         shadowOffset: {
-            width: 10,
-            height: 10
+            width: 0,
+            height: 3
         },
+        shadowRadius: 1,
+        shadowOpacity: 1,
+        shadowColor: colors.GREY,
         borderRadius: 50,
-        width: '30%'
+        width: '35%',
+        elevation: 10,
     },
 })
 
