@@ -55,7 +55,7 @@ const Dashboard = ({navigation}) => {
 
                 <View style={styles.balanceContainer}>
                     <View style={styles.customerBalance}>
-                        <Text>0.00</Text>
+                        <Text>₦0.00</Text>
                         <Chevrondown size={24} />
                     </View>
                     <Text>{stringConstants.WALLET_BALANCE_TEXT}</Text>
@@ -145,7 +145,7 @@ const Dashboard = ({navigation}) => {
                             <Text>{stringConstants.CREDIT_DESCRIPTION_TEXT}</Text>
                         </View>
                     </View>
-                    <Text style={{...styles.transactionAmount, color: colors.GREEN}}>100.00</Text>
+                    <Text style={{...styles.transactionAmount, color: colors.GREEN}}>₦100.00</Text>
                 </View>
                 <View style={styles.transactionContainerStyle}>
                     <View style={styles.bankAndTransaction}>
@@ -155,7 +155,7 @@ const Dashboard = ({navigation}) => {
                             <Text>{stringConstants.DEBIT_DESCRIPTION_TEXT}</Text>
                         </View>
                     </View>
-                    <Text style={{...styles.transactionAmount, color: colors.RED}}>100.00</Text>
+                    <Text style={{...styles.transactionAmount, color: colors.RED}}>₦100.00</Text>
                 </View>
             </View>
 

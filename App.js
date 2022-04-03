@@ -16,7 +16,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName='Dashboard'
+        initialRouteName='Airtime'
         screenOptions={{
           headerTitleAlign: 'center',
         }}

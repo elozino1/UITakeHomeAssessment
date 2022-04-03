@@ -9,7 +9,9 @@ export const colors = {
     LIGHT_GREY: '#EAEAEA',
     FEATURE_CONTAINER: '#BDD9BA',
     TRANSACTION_BACKGROUND_COLOR: '#FDFDFD',
-    RED: '#FF0000'
+    RED: '#FF0000',
+    DIVIDER_COLOR: '#C4C4C4',
+    PURCHASE_BUTTON_COLOR: '#C0D73E',
 }
 
 export const stringConstants = {
@@ -49,6 +51,7 @@ complete this payment`,
     PURCHASE_TEXT: 'Purchase',
     TOPUP_TEXT: 'Mobile Top-up',
     BUNDLE_TEXT: 'Data Bundle',
+    CONTACTS_TEXT: 'Contacts',
     RECENT_TRANSACTION_TEXT: 'Recent Transaction',
     DATE: 'Saturday, 11 February 2022',
     CUSTOMER_FULL_NAME_TEXT: 'Sambo Omotola Olanrewaju',
