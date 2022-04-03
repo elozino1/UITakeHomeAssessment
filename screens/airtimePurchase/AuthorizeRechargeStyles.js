@@ -17,6 +17,8 @@ export default StyleSheet.create({
     },
     amountStyle: {
         textAlign: 'center',
+        fontSize: 24,
+        fontWeight: 'bold'
     },
     promptStyle: {
         textAlign: 'center',
@@ -38,6 +40,21 @@ export default StyleSheet.create({
         width: 70,
         justifyContent: 'center'
     },
+    pin: {
+        height: 20,
+        width: 20,
+        borderRadius: 10,
+        marginBottom: 50,
+        marginTop: 20,
+        backgroundColor: colors.LIGHT_GREEN
+    },
+    pinContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        alignSelf: 'center',
+        width: '40%'
+    },
     fingerPrintButton: {
         height: 70,
         width: 70,
@@ -47,6 +64,8 @@ export default StyleSheet.create({
         alignSelf: 'center'
     },
     number: {
-        textAlign: 'center'
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 18
     },
 })

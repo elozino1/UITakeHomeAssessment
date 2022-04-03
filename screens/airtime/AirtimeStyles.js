@@ -13,15 +13,39 @@ export default StyleSheet.create({
     categoryStyles: {
         flexDirection: 'row',
         borderWidth: 1,
-        borderColor: colors.LIGHT_GREY
+        borderColor: colors.LIGHT_GREY,
+        borderRadius: 5,
     },
     sectionHeaderText: {
         marginBottom: 10,
     },
+    activeCategory: {
+        backgroundColor: colors.LIGHT_GREEN, 
+        paddingVertical: 10, 
+        width: '48%', 
+        margin: 3, 
+        alignItems: 'center'
+    },
+    activeText: {
+        color: colors.DARK_GREEN,
+    },
+    inactiveText: {
+        color: colors.BLACK,
+    },
+    inactiveCategory: {
+        paddingVertical: 10, 
+        width: '48%', 
+        margin: 3, 
+        alignItems: 'center'
+    },
     amountTextInputStyle: {
         borderWidth: 0.5,
         borderColor: colors.LIGHT_GREY,
+        borderTopLeftRadius: 5,
+        borderBottomLeftRadius: 5,
         padding: 10,
+        width: '70%',
+        color: colors.PHONE_NUMBER_INPUT_COLOR
     },
     phoneNumberInputStyle: {
         flexDirection: 'row',
@@ -33,6 +57,10 @@ export default StyleSheet.create({
         borderRightWidth: 0.5,
         borderBottomWidth: 0.5,
         borderTopWidth: 0.5,
+        borderTopRightRadius: 5,
+        borderBottomRightRadius: 5,
+        width: '30%',
+        justifyContent: 'center',
     },
     dividerContainer: {
         flexDirection: 'row',
@@ -50,6 +78,7 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
         backgroundColor: colors.GREY,
         borderColor: colors.GREY,
+        borderRadius: 5,
         paddingVertical: 20,
         paddingHorizontal: 10,
         marginBottom: 10,
@@ -73,5 +102,6 @@ export default StyleSheet.create({
     purchaseTextStyle: {
         color: colors.WHITE,
         textAlign: 'center',
+        fontSize: 20,
     },
 })

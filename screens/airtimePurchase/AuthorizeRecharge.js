@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, View, Text } from "react-native";
+import { SafeAreaView, View, Text, TouchableOpacity } from "react-native";
 
 import { stringConstants } from "../../utils/constants";
 import MTN from '../../assets/images/mtn.svg';
@@ -22,53 +22,82 @@ const AuthorizeRecharge = () => {
 
             <View>
 
+            <View style={styles.pinContainer}>
+                <View style={styles.pin}></View>
+                <View style={styles.pin}></View>
+                <View style={styles.pin}></View>
+                <View style={styles.pin}></View>
+            </View>
+
             {/* keypad first row */}
             <View style={styles.keypadRow}>
-                <View style={styles.numberButton}>
-                    <Text style={styles.number}>1</Text>
-                </View>
-                <View style={styles.numberButton}>
-                    <Text style={styles.number}>2</Text>
-                </View>
-                <View style={styles.numberButton}>
-                    <Text style={styles.number}>3</Text>
-                </View>
+                <TouchableOpacity>
+                    <View style={styles.numberButton}>
+                        <Text style={styles.number}>1</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={styles.numberButton}>
+                        <Text style={styles.number}>2</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={styles.numberButton}>
+                        <Text style={styles.number}>3</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
 
             {/* keypad second row */}
             <View style={styles.keypadRow}>
-                <View style={styles.numberButton}>
-                    <Text style={styles.number}>4</Text>
-                </View>
-                <View style={styles.numberButton}>
-                    <Text style={styles.number}>5</Text>
-                </View>
-                <View style={styles.numberButton}>
-                    <Text style={styles.number}>6</Text>
-                </View>
+                <TouchableOpacity>
+                    <View style={styles.numberButton}>
+                        <Text style={styles.number}>4</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={styles.numberButton}>
+                        <Text style={styles.number}>5</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={styles.numberButton}>
+                        <Text style={styles.number}>6</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
 
             {/* keypad third row */}
             <View style={styles.keypadRow}>
-                <View style={styles.numberButton}>
-                    <Text style={styles.number}>7</Text>
-                </View>
-                <View style={styles.numberButton}>
-                    <Text style={styles.number}>8</Text>
-                </View>
-                <View style={styles.numberButton}>
-                    <Text style={styles.number}>9</Text>
-                </View>
+                <TouchableOpacity>
+                    <View style={styles.numberButton}>
+                        <Text style={styles.number}>7</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={styles.numberButton}>
+                        <Text style={styles.number}>8</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={styles.numberButton}>
+                        <Text style={styles.number}>9</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
 
             {/* keypad fourth row */}
             <View style={styles.keypadRow}>
-                <View style={styles.fingerPrintButton}>
-                    <FingerPrint style={styles.fingerPrint} />
-                </View>
-                <View style={styles.numberButton}>
-                    <Text style={styles.number}>0</Text>
-                </View>
+                <TouchableOpacity>
+                    <View style={styles.fingerPrintButton}>
+                        <FingerPrint style={styles.fingerPrint} />
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={styles.numberButton}>
+                        <Text style={styles.number}>0</Text>
+                    </View>
+                </TouchableOpacity>
                 <View style={styles.emptyNumberButton}></View>
             </View>
             </View>

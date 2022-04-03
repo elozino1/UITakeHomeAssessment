@@ -4,7 +4,7 @@ import { colors } from '../../utils/constants'
 export default StyleSheet.create({
     grandContainer: {
         flex: 1,
-        backgroundColor: colors.BACKGROUND_COLOR
+        backgroundColor: colors.BACKGROUND_COLOR,
     },
 
     // header container
@@ -35,6 +35,7 @@ export default StyleSheet.create({
         backgroundColor: colors.LIGHT_GREEN,
         paddingBottom: 35,
         paddingHorizontal: 20,
+        paddingTop: 20,
     },
     featureContainer: {
         width: 80,
@@ -52,6 +53,9 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignSelf: 'center',
         marginBottom: 5,
+    },
+    singleFeatureTextStyle: {
+        color: colors.DARK_GREEN,
     },
     featureAndText: {
         alignItems: 'center',
@@ -128,9 +132,8 @@ export default StyleSheet.create({
         marginTop: 30,
     },
     serviceProviders: {
-        marginRight: 20
+        marginRight: 35
     },
     profileInfo: {
-        
     },
 })

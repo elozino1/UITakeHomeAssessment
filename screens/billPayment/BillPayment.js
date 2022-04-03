@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { View, Text, SafeAreaView, ScrollView, StatusBar } from "react-native";
+import { View, Text, SafeAreaView, ScrollView, StatusBar, TouchableOpacity } from "react-native";
 import { Input } from 'react-native-elements';
 
 import styles from './BillPaymentStyles'
-import { stringConstants } from "../../utils/constants";
+import { colors, stringConstants } from "../../utils/constants";
 import MTN from '../../assets/images/mtn.svg';
 import NineMobile from '../../assets/images/9mobile.svg';
 import Airtel from '../../assets/images/airtel.svg';
@@ -18,13 +18,17 @@ import Spectranet from '../../assets/images/spectranet.svg';
 import Search from '../../assets/images/searchicon.svg';
 
 
-const BillPayment = () => {
+const BillPayment = ({ navigation }) => {
 
     const [searchText, setSearchText] = useState('')
 
 
     const updateSearchText = (text) => {
         setSearchText(text)
+    }
+
+    const buyAirtime = () => {
+        navigation.navigate('Airtime')
     }
 
     return (
@@ -42,9 +46,9 @@ const BillPayment = () => {
                     <Search
                         name='user'
                         size={24}
-                        color='black'
+                        color={colors.BLACK}
                     />
-                    }
+                }
             />
             </View>
 
@@ -53,10 +57,10 @@ const BillPayment = () => {
                 <View style={styles.serviceProviderContainer}>
                     <Text>{stringConstants.AIRTIME_TEXT}</Text>
                     <View style={styles.serviceProviders}>
-                        <View style={styles.provider}>
+                        <TouchableOpacity style={styles.provider} onPress={buyAirtime}>
                             <MTN />
                             <Text style={styles.providerName}>{stringConstants.MTN_TEXT}</Text>
-                        </View>
+                        </TouchableOpacity>
                         <View style={styles.provider}>
                             <Airtel />
                             <Text style={styles.providerName}>{stringConstants.AIRTEL_TEXT}</Text>

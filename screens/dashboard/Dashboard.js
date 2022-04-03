@@ -49,19 +49,20 @@ const Dashboard = ({navigation}) => {
             {/* header */}
             <View style={styles.headerContainer}>
                 <View style={styles.greetingContainer}>
-                    <Text>{stringConstants.GREETING_TEXT}</Text>
-                    <Text>{stringConstants.CUSTOMER_NAME}</Text>
+                    <Text style={{fontWeight: 'bold', fontSize: 16}}>{stringConstants.GREETING_TEXT}</Text>
+                    <Text style={{fontWeight: 'bold', fontSize: 16, marginTop: 10}}>{stringConstants.CUSTOMER_NAME}</Text>
                 </View>
 
                 <View style={styles.balanceContainer}>
                     <View style={styles.customerBalance}>
-                        <Text>₦0.00</Text>
+                        <Text style={{fontWeight: 'bold', fontSize: 16}}>₦ 0.00 </Text>
                         <Chevrondown size={24} />
                     </View>
-                    <Text>{stringConstants.WALLET_BALANCE_TEXT}</Text>
+                    <Text style={{fontWeight: 'bold', fontSize: 16, marginTop: 10}}>{stringConstants.WALLET_BALANCE_TEXT}</Text>
                 </View>
             </View>
 
+            <ScrollView showsVerticalScrollIndicator={false}>
             {/* features */}
             <View style={styles.allFeaturesContainer}>
                 <View style={styles.features}>
@@ -83,16 +84,12 @@ const Dashboard = ({navigation}) => {
                         </View>
 
                         <View style={styles.featureAndText}>
-                        <TouchableWithoutFeedback onPress={navigateToBills}>
-                            <View>
-                                <View style={styles.featureContainer}>
-                                    <PayBills style={styles.featureImage} />
-                                </View>
-                                <Text style={styles.singleFeatureTextStyle} onPress={navigateToBills}>
-                                    {stringConstants.PAY_BILLS_TEXT}
-                                </Text>
+                            <View style={styles.featureContainer}>
+                                <PayBills style={styles.featureImage} onPress={navigateToBills}/>
                             </View>
-                        </TouchableWithoutFeedback>
+                            <Text style={styles.singleFeatureTextStyle} onPress={navigateToBills}>
+                                {stringConstants.PAY_BILLS_TEXT}
+                            </Text>
                         </View>
                     </View>
 
@@ -107,12 +104,10 @@ const Dashboard = ({navigation}) => {
 
                 <View style={styles.accountNumberInfo}>
                     <Text>{stringConstants.ACCOUNT_NUMBER_TEXT} -</Text>
-                    <Text>1007856777</Text>
+                    <Text style={styles.singleFeatureTextStyle}>1007856777</Text>
                     <Copy width={15} height={15}/>
                 </View>
             </View>
-
-            <ScrollView showsVerticalScrollIndicator={false}>
 
             {/* recent transactions */}
             <View style={styles.recentTransactionsGrandContainer}>
@@ -163,7 +158,7 @@ const Dashboard = ({navigation}) => {
             <View>
                 <View style={styles.serviceProvidersGrandContainer}>
                     <View style={styles.customerBalance}>
-                        <Text>{stringConstants.SHOW_MORE_TEXT}</Text>
+                        <Text style={styles.singleFeatureTextStyle}>{stringConstants.SHOW_MORE_TEXT} </Text>
                         <Chevrondown size={24} />
                     </View>
 

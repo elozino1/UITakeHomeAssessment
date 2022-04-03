@@ -4,6 +4,7 @@ export const colors = {
     GREENISH_YELLOW: '#C0D73E',
     BACKGROUND_COLOR: '#FAFAFE',
     WHITE: '#FFFFFF',
+    BLACK: '#000000',
     GREY: '#F1F1F1',
     GREEN: '#548E4E',
     LIGHT_GREY: '#EAEAEA',
@@ -12,6 +13,7 @@ export const colors = {
     RED: '#FF0000',
     DIVIDER_COLOR: '#C4C4C4',
     PURCHASE_BUTTON_COLOR: '#C0D73E',
+    PHONE_NUMBER_INPUT_COLOR: '#9C9C9C'
 }
 
 export const stringConstants = {

@@ -4,7 +4,7 @@
 
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native'
 import ArrowLeft from '../assets/images/arrow-left.svg'
 
 const CustomHeader = ({ title }) => {
@@ -12,12 +12,14 @@ const CustomHeader = ({ title }) => {
     const navigation = useNavigation()
 
     return (
-        <View style={styles.grandContainer}>
-            <View style={styles.container}>
-                <ArrowLeft name="arrow-back-outline" size={28} style={styles.leftMenuBack} onPress={() => navigation.goBack()} />
-                <Text style={styles.toolbarText}>{ title }</Text>
+        <SafeAreaView>
+            <View style={styles.grandContainer}>
+                <View style={styles.container}>
+                    <ArrowLeft name="arrow-back-outline" size={28} style={styles.leftMenuBack} onPress={() => navigation.goBack()} />
+                    <Text style={styles.toolbarText}>{ title }</Text>
+                </View>
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
     },
     toolbarText: {
         fontSize: 20,
-        textAlign: 'center',
+        alignSelf: 'center',
     }
 })
 

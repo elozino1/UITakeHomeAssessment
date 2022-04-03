@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FlatList, SafeAreaView, StatusBar, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
+import { FlatList, SafeAreaView, ScrollView, StatusBar, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 
 import Contacts from '../../assets/images/contact-book.svg';
@@ -7,10 +7,13 @@ import Wallet from '../../assets/images/wallet.svg';
 import FCMB from '../../assets/images/FCMB.svg';
 import GTBlock from '../../assets/images/GTblock.svg';
 import RadioButton from '../../assets/images/radiobutton.svg';
+import SelectedRadioButton from '../../assets/images/selectedradio.svg';
 import styles from './AirtimeStyles';
-import { stringConstants } from '../../utils/constants';
+import { colors, stringConstants } from '../../utils/constants';
 
-const Airtime = () => {
+const Airtime = ({ navigation, route }) => {
+
+    const serviceProvider = route.params
 
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState('mtn');
@@ -25,23 +28,28 @@ const Airtime = () => {
         {
             logo: <Wallet />,
             bankName: stringConstants.WALLET_TEXT,
-            balance: '434,533,000'
+            balance: '434,533,000',
+            radioButton: <RadioButton />
         },
         {
             logo: <FCMB />,
             bankName: stringConstants.BANK_TEXT,
-            balance: '23,000'
+            balance: '23,000',
+            radioButton: <RadioButton />
         },
         {
             logo: <GTBlock />,
             bankName: stringConstants.BANK_TEXT,
-            balance: '23,000'
+            balance: '23,000',
+            radioButton: <RadioButton />
         }
         
     ])
 
     const [rechargeAmount, setRechargeAmount] = useState()
     const [phoneNumber, setPhoneNumber] = useState()
+    const [isClicked, setIsClicked] = useState(true)
+    const [isSelected, setIsSelected] = useState(false)
 
     const setUserRechargeAmount = (amount) => {
         setRechargeAmount(amount)
@@ -51,25 +59,44 @@ const Airtime = () => {
         setPhoneNumber(number)
     }
 
+    const toggleButton = () => {
+        setIsClicked(!isClicked)
+    }
+
+    const toggleRadio = () => {
+        setIsSelected(!isSelected)
+    }
+
+    const authenticateTransaction = () => {
+        navigation.navigate('Airtime Recharge')
+    }
+
     const _renderItem = ({item}) => (
-        <View style={styles.walletChoice}>
-            <View style={styles.bankInfo}>
-                {item.logo}
-                <Text style={styles.bankNameText}>{item.bankName}</Text>
+        <TouchableWithoutFeedback onPress={toggleRadio}>
+            <View style={styles.walletChoice}>
+                <View style={styles.bankInfo}>
+                    {item.logo}
+                    <Text style={styles.bankNameText}>{item.bankName}</Text>
+                </View>
+                <View style={styles.balanceInfo}>
+                    <Text>{stringConstants.BALANCE_TEXT}: </Text>
+                    <Text style={{marginRight: 10}}>{item.balance}</Text>
+                    {
+                        isSelected ?
+                        <SelectedRadioButton />
+                        :
+                        <RadioButton />
+                    }
+                </View>
             </View>
-            <View style={styles.balanceInfo}>
-                <Text>{stringConstants.BALANCE_TEXT}: </Text>
-                <Text style={{marginRight: 10}}>{item.balance}</Text>
-                <RadioButton />
-            </View>
-        </View>
+        </TouchableWithoutFeedback>
     )
 
     return (
         <SafeAreaView style={styles.grandContainer}>
-            <StatusBar />
+            <ScrollView>
             {/* network provider */}
-            <View style={styles.sectionContainer}>
+            <View style={{...styles.sectionContainer, marginTop: 20}}>
                 <Text style={styles.sectionHeaderText}>{stringConstants.NETWORK_PROVIDER_TEXT}</Text>
                 <DropDownPicker
                     open={open}
@@ -86,12 +113,27 @@ const Airtime = () => {
             <View style={styles.sectionContainer}>
                 <Text style={styles.sectionHeaderText}>{stringConstants.CATEGORY_TEXT}</Text>
                 <View style={styles.categoryStyles}>
-                    <View style={{backgroundColor: '#548E4E', opacity: 0.08}}>
-                        <Text style={{color: '#548E4E', justifyContent: 'center'}}>{stringConstants.TOPUP_TEXT}</Text>
-                    </View>
-                    <View>
-                        <Text>{stringConstants.BUNDLE_TEXT}</Text>
-                    </View>
+                    {
+                        isClicked ?
+                        <TouchableOpacity style={styles.activeCategory} >
+                            <Text style={styles.activeText}>{stringConstants.TOPUP_TEXT}</Text>
+                        </TouchableOpacity>
+                        :
+                        <TouchableOpacity style={styles.inactiveCategory} onPress={toggleButton}>
+                            <Text style={styles.inactiveText}>{stringConstants.TOPUP_TEXT}</Text>
+                        </TouchableOpacity>
+                    }
+
+                    {
+                        !isClicked ?
+                        <TouchableOpacity style={styles.activeCategory} >
+                            <Text style={styles.activeText}>{stringConstants.BUNDLE_TEXT}</Text>
+                        </TouchableOpacity>
+                        :
+                        <TouchableOpacity style={styles.inactiveCategory} onPress={toggleButton}>
+                            <Text style={styles.inactiveText}>{stringConstants.BUNDLE_TEXT}</Text>
+                        </TouchableOpacity>
+                    }
                 </View>
             </View>
 
@@ -103,7 +145,7 @@ const Airtime = () => {
                     onChangeText={setUserRechargeAmount}
                     placeholder='Enter Amount'
                     keyboardType='numeric'
-                    style={styles.amountTextInputStyle}
+                    style={{...styles.amountTextInputStyle, width: '100%', borderRadius: 5,}}
                 />
             </View>
 
@@ -120,7 +162,7 @@ const Airtime = () => {
                     />
                     <View style={styles.contactsContainer}>
                         <Contacts />
-                        <Text>{stringConstants.CONTACTS_TEXT}</Text>
+                        <Text style={{color: colors.PHONE_NUMBER_INPUT_COLOR, marginLeft: 5}}>{stringConstants.CONTACTS_TEXT}</Text>
                     </View>
                 </View>
             </View>
@@ -128,7 +170,7 @@ const Airtime = () => {
             <View style={styles.sectionContainer}>
                 <View style={styles.dividerContainer}>
                     <View style={styles.dividerStyle}></View>
-                    <Text>{stringConstants.PAY_WITH_TEXT}</Text>
+                    <Text style={{fontWeight: 'bold'}}>{stringConstants.PAY_WITH_TEXT}</Text>
                     <View style={styles.dividerStyle}></View>
                 </View>
             </View>
@@ -143,11 +185,11 @@ const Airtime = () => {
             </View>
 
             <View style={styles.sectionContainer}>
-                <TouchableOpacity style={styles.purchaseButton}>
+                <TouchableOpacity style={styles.purchaseButton} onPress={authenticateTransaction}>
                     <Text style={styles.purchaseTextStyle}>{stringConstants.PURCHASE_TEXT}</Text>
                 </TouchableOpacity>
             </View>
-
+            </ScrollView>
         </SafeAreaView>
     )
 }
