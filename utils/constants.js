@@ -2,10 +2,14 @@ export const colors = {
     LIGHT_GREEN: '#F1F6F1',
     DARK_GREEN: '#548E4E',
     GREENISH_YELLOW: '#C0D73E',
-    BACKGROUND_COLOR: '#E5E5E5',
+    BACKGROUND_COLOR: '#FAFAFE',
     WHITE: '#FFFFFF',
     GREY: '#F1F1F1',
     GREEN: '#548E4E',
+    LIGHT_GREY: '#EAEAEA',
+    FEATURE_CONTAINER: '#BDD9BA',
+    TRANSACTION_BACKGROUND_COLOR: '#FDFDFD',
+    RED: '#FF0000'
 }
 
 export const stringConstants = {
@@ -30,4 +34,22 @@ export const stringConstants = {
     SPECTRANET_TEXT: 'Spectranet',
     INPUT_PIN_PROMPT_TEXT: `Enter your transaction PIN to
 complete this payment`,
+    NETWORK_PROVIDER_TEXT: 'Network Provider',
+    CATEGORY_TEXT: 'Category',
+    AMOUNT_TEXT: 'Amount',
+    PHONE_NUMBER_TEXT: 'Phone Number',
+    PAY_WITH_TEXT: 'Pay With',
+    BANK_TEXT: 'Bank',
+    WALLET_TEXT: '9PSB Wallet',
+    BALANCE_TEXT: 'Balance',
+    PURCHASE_TEXT: 'Purchase',
+    TOPUP_TEXT: 'Mobile Top-up',
+    BUNDLE_TEXT: 'Data Bundle',
+    RECENT_TRANSACTION_TEXT: 'Recent Transaction',
+    DATE: 'Saturday, 11 February 2022',
+    CUSTOMER_FULL_NAME_TEXT: 'Sambo Omotola Olanrewaju',
+    CREDIT_DESCRIPTION_TEXT: 'Bank transfer from Rasaq Agbala',
+    DEBIT_DESCRIPTION_TEXT: 'Transfer to Rasaq Agbala',
+    SHOW_MORE_TEXT: 'Show more',
+    BILL_PAYMENT_TEXT: 'Bill Payment',
 }

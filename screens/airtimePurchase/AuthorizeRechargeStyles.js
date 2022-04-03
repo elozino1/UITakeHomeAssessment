@@ -11,7 +11,6 @@ export default StyleSheet.create({
     },
     logoContainer: {
         alignItems: 'center',
-        // marginTop: 10,
     },
     serviceProviderTextStyle: {
         marginTop: 5,
